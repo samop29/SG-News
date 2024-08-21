@@ -72,7 +72,7 @@ export default function News() {
         {/* {newes.length > 0 ?(newes.map((data) => 
           <Card data={data} key={data.url} />
         )) : (<p></p>))} */}
-        {newes.length > 0 ? (
+        {Array.isArray(newes) && newes.length > 0 ? (
           newes.map((data) => <Card data={data} key={data.url} />)
         ) : (
           <p>No news articles found for the selected topic.</p>
