@@ -5,8 +5,9 @@ export default function Headline() {
   const [headline, setHeadline] = useState([]);
   useEffect(() => {
     const headlinecall = async () => {
+      const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
       const fetchcall = await fetch(
-        "https://newsapi.org/v2/top-headlines?country=in&apiKey=f119d030624b45ef958ecf675b4c92cf"
+        `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`
       );
       const result = await fetchcall.json();
       const articals = result.articles;
