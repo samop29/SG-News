@@ -34,10 +34,11 @@ export default function News() {
       // console.log("Fetching news for topic:", topic);
       const fetchNews = async () => {
         try {
+          const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
           const response = await fetch(
             `https://newsapi.org/v2/everything?q=${encodeURIComponent(
               topic
-            )}&language=en&sortBy=publishedAt&apiKey=f119d030624b45ef958ecf675b4c92cf`
+            )}&language=en&sortBy=publishedAt&apiKey=${apiKey}`
           );
           const result = await response.json();
           // console.log(result);
